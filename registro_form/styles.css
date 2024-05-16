@@ -1,0 +1,290 @@
+body {
+  margin: 0 auto;
+  width: 800px;
+  font-family:'Roboto', sans-serif;
+  background-color: #ebf3f7;
+}
+
+img{
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  letter-spacing: 0.18em;
+
+}
+.container4 {
+  max-width: 2000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* The container */
+.radio-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-left: 110px;
+  margin-top: 30px;
+  margin-block-end: 20px;
+  font-weight: 555;
+}
+.container {
+  vertical-align: middle;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container2 {
+  vertical-align: middle;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  margin-left: 60px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  transition: transform 0.50s ease-in-out;
+
+}
+.checkmark:hover input ~ .checkmark {
+  transform: scale(0.100);
+}
+.checkmark:active {
+  transform: scale(0.100);
+}
+
+/* eliminar los botones predeterminados*/
+
+.container input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.container2 input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* 
+Crear un botón de opción personalizado*/
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 50px;
+  height: 30px;
+  width: 30px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/*Al pasar el mouse, agregue un color de fondo gris. */
+.container2:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Cuando el botón de opción esté marcado, agregue un fondo azul */
+
+.container input:checked ~ .checkmark {
+  background-color: #003851;
+}
+.container2 input:checked ~ .checkmark {
+  background-color: #003851;
+}
+
+/* Cree el indicador (el punto/círculo, oculto cuando no está marcado)*/
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Mostrar el indicador (punto/círculo) cuando esté marcado */
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+.container2 input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.login-container {
+  margin-top: 1px;
+  color: #000000;
+  width: 400px;
+  height: 580px;
+  padding: 60px;
+  border: 2px solid #d8ecfd;
+  background-color: rgb(245, 245, 245);
+  border-radius: 30px;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #6fafcc;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  background-color: rgb(245, 245, 245);
+}
+
+input::placeholder {
+  color: #c1bfbf;
+}
+/* Crear un botón de opción personalizado*/
+.checkmark1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 20%;
+  border: 1px solid #6fafcc;
+  transition: transform 0.50s ease-in-out;
+
+}
+.checkmark1:hover input ~ .checkmark1 {
+  transform: scale(0.100);
+}
+.checkmark1:active {
+  transform: scale(0.100);
+}
+
+.aceptar-condiciones {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* eliminar los botones predeterminados*/
+
+.condiciones input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/*Al pasar el mouse, agregue un color de fondo gris. */
+.aceptar-condiciones:hover input ~ .checkmark1 {
+  background-color: #ccc;
+}
+/* Cuando el botón de opción esté marcado, agregue un fondo azul */
+
+.aceptar-condiciones input:checked ~ .checkmark1 {
+  background-color: #002535;
+}
+/* Cree el indicador (el punto/círculo, oculto cuando no está marcado)*/
+
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Mostrar el indicador (punto/círculo) cuando esté marcado */
+
+.aceptar-condiciones input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+.login-btn {
+  width: 85%;
+  padding: 10px;
+  background-color: #002535;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.oauth-options {
+  margin-top: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.btn-text{
+  vertical-align: middle;
+  margin-left:10px
+}
+.google-btn,
+.facebook-btn {
+ 
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+.google-btn {
+ 
+  color: #000000;
+  border: 1px solid #6fafcc;
+  background-color: #ffffff;
+  border-radius: 110px;
+}
+
+.facebook-btn {
+  background-color: #235ad3;
+  color: #fff;
+  border-radius: 110px;
+}
+.google-icon,
+.facebook-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 10px;
+  
+  
+}
+
+
+
