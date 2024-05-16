@@ -108,11 +108,41 @@ header {
     margin-top: 50px;
 }
 
+.aspirante:hover{
+    -webkit-transform:scale(1.0);transform:scale(0.8);
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+    .text1{
+        background-color: #ebf3f7;
+        color:#ebf3f7;
+        border: 1px solid #ebf3f7;
+        box-shadow: none;
+    }
+    .t{
+        box-shadow: none;
+    }
+}
+
 .ofertante {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
+}
+
+.ofertante:hover{
+    -webkit-transform:scale(1.0);transform:scale(0.8);
+    cursor: pointer;
+    transition: transform 0.15s ease-in-out;
+    .text2{
+        background-color: #ebf3f7;
+        color:#ebf3f7;
+        border: 1px solid #ebf3f7;
+        box-shadow: none;
+    }
+    .o{
+        box-shadow: none;
+    }
 }
 
 footer{
