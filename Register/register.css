@@ -82,7 +82,7 @@ header .opcion{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .opcion{
@@ -96,8 +96,8 @@ header {
 
 #hero {
     display: flex;
-    align-items: center; /* Alinear verticalmente en el centro */
-    justify-content: center; /* Alinear horizontalmente en el centro */
+    align-items: center;
+    justify-content: center;
 }
 
 .aspirante {
@@ -171,17 +171,21 @@ footer a{
     position: absolute;
     top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: 40px;
+    right: 50px;
+    width: 40px;
     background-color: #eee;
     border-radius: 50%;
   }
-  /* The container */
-  .radio-container{
+
+  .radio-container {
     display: flex;
-    align-items: center;
-    margin-left: 45px;
-    
+    align-items: flex-start;
+    flex-direction: row;
+    margin-left: 110px;
+    margin-top: 30px;
+    margin-block-end: 20px;
+    font-weight: 555;
   }
   .container {
     display: block;
@@ -194,6 +198,7 @@ footer a{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-weight: bold;
   }
   .container2 {
     display: block;
@@ -207,9 +212,8 @@ footer a{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-weight: bold;
   }
-  
-  /* eliminar los botones predeterminados*/
   
   .container input[type=radio] {
     position: absolute;
@@ -223,9 +227,6 @@ footer a{
   }
   
   
-  /* 
-  Crear un botón de opción personalizado*/
-  
   .checkmark {
     position: absolute;
     top: 0;
@@ -236,15 +237,12 @@ footer a{
     border-radius: 50%;
   }
   
-  /*Al pasar el mouse, agregue un color de fondo gris. */
   .container2:hover input~.checkmark {
     background-color: #ccc;
   }
   .container:hover input~.checkmark {
     background-color: #ccc;
   }
-  
-  /* Cuando el botón de opción esté marcado, agregue un fondo azul */
   
   .container input:checked~.checkmark {
     background-color: #01335c;
@@ -253,14 +251,11 @@ footer a{
     background-color: #01335c;
   }
   
-  /* Cree el indicador (el punto/círculo, oculto cuando no está marcado)*/
-  
   .checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
-  /* Mostrar el indicador (punto/círculo) cuando esté marcado */
   
   .container input:checked~.checkmark:after {
     display: block;
