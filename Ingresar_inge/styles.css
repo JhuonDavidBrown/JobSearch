@@ -1,0 +1,187 @@
+body {
+  margin: 0 auto;
+  width: 800px;
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+  margin-top: 20px;
+  margin-block: 20px;
+  margin-left: 330px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  letter-spacing: 0.18em;
+}
+
+
+.imagen {
+  max-width: 2000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+p{
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+.login-container2 {
+  margin-top: 1px;
+  color: #000000;
+  width: 400px;
+  height: 510px;
+  padding: 60px;
+  border: 2px solid #d8ecfd;
+  border-radius: 30px;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #6fafcc;
+  border-radius: 10px;
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  background-color: rgb(245, 245, 245);
+}
+
+input::placeholder {
+  color: #c1bfbf;
+}
+
+/* Crear un botón de opción personalizado*/
+.checkmark1 {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 20%;
+  border: 1px solid #6fafcc;
+  transition: transform 0.5s ease-in-out;
+}
+
+.checkmark1:hover input ~ .checkmark1 {
+  transform: scale(0.1);
+}
+
+.checkmark1:active {
+  transform: scale(0.1);
+}
+
+.recordar {
+  display: flex;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+ .recordar a{
+  padding-left: 139px; 
+  color: rgb(7, 166, 206); 
+}
+
+
+/* eliminar los botones predeterminados*/
+.boton_recordar input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/*Al pasar el mouse, agregue un color de fondo gris. */
+.boton_recordar:hover input ~ .checkmark1 {
+  background-color: #ccc;
+}
+
+/* Cuando el botón de opción esté marcado, agregue un fondo azul */
+.boton_recordar input:checked ~ .checkmark1 {
+  background-color: #01335c;
+}
+
+/* Cree el indicador (el punto/círculo, oculto cuando no está marcado)*/
+.checkmark1:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Mostrar el indicador (punto/círculo) cuando esté marcado */
+.boton_recordar input:checked ~ .checkmark1:after {
+  display: block;
+}
+
+.login-btn {
+  width: 60%;
+  padding: 10px;
+  background-color: #1c2844;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  margin: 10px 10px 10px ;
+}
+
+.oauth-options {
+  margin-top: 20px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.btn-text {
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+.google-btn,
+.facebook-btn {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  
+
+}
+
+.google-btn {
+  color: #000000;
+  border: 1px solid #6fafcc;
+  background-color: #ffffff;
+  border-radius: 110px;
+  
+}
+
+.facebook-btn {
+  background-color: #235ad3;
+  color: #fff;
+  border-radius: 110px;
+  margin: 10px ;
+}
+
+.google-icon,
+.facebook-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin: 10px ;
+}
+
