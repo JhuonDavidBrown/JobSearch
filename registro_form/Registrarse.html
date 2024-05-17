@@ -1,24 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>JobSearch</title>
+    <!-- Incluir scripts de Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script> <!-- Agregado para Firestore -->
+    <script>
+        // Configuración de Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyDKTveJUKHlY4ioPcYIoEsAWaOtmQ5msBw",
+            authDomain: "jobsearch-284fa.firebaseapp.com",
+            projectId: "jobsearch-284fa",
+            storageBucket: "jobsearch-284fa.appspot.com",
+            messagingSenderId: "835836872345",
+            appId: "1:835836872345:web:ed8cfb1d43bbcc73715a08",
+            measurementId: "G-47J1N1DVLC"
+        };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        // Inicializar Firestore
+        var firestore = firebase.firestore();
+
+        // Función para registrar usuario con correo y contraseña
+        function registerWithEmail(role) {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password === confirmPassword) {
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then((userCredential) => {
+                        var user = userCredential.user;
+                        console.log(user);
+
+                        // Guardar información del usuario en Firestore
+                        firestore.collection('users').doc(user.uid).set({
+                            email: email,
+                            role: role
+                        })
+                        .then(() => {
+                            console.log("Usuario registrado correctamente en Firestore.");
+                        })
+                        .catch((error) => {
+                            console.error("Error al registrar usuario en Firestore: ", error);
+                        });
+
+                        document.getElementById('idmain').innerHTML = 
+                            "Cuenta creada con éxito. Bienvenido, " + user.email;
+                    })
+                    .catch((error) => {
+                        console.error("Error al crear la cuenta: ", error.message);
+                    });
+            } else {
+                alert("Las contraseñas no coinciden.");
+            }
+        }
+
+        // Función para obtener parámetros de la URL
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Función para iniciar sesión con Google
+        function loginGoogle() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            provider.addScope('https://www.googleapis.com/auth/plus.login');
+
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+                var token = result.credential.accessToken;
+                var user = result.user;
+                console.log(user);
+
+                // Obtener el rol del parámetro de URL
+                var role = getUrlParameter('role');
+                // Llamar a la función de registro con el rol
+                registerWithEmail(role);
+            }).catch(function(error) {
+                console.log(error.message);
+            });
+        }
+
+        // Función para iniciar sesión con Facebook
+        function loginFacebook() {
+            var provider = new firebase.auth.FacebookAuthProvider();
+            provider.addScope('user_birthday');
+
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+                var token = result.credential.accessToken;
+                var user = result.user;
+
+                // Obtener el rol del parámetro de URL
+                var role = getUrlParameter('role');
+                // Llamar a la función de registro con el rol
+                registerWithEmail(role);
+            }).catch(function(error) {
+                console.log(error.message);
+            });
+        }
+    </script>
 </head>
 <body>
     <div>
         <div class="container4">
-            <img src="../imgs/logo.png" alt="login-icon" height="70px" width="100px" />
+            <img src="../imgs/logo.png" alt="login-icon" height="70px" width="100px">
         </div>
         <form>
             <div class="radio-container">
                 <label class="container">Tipo usuario
-                    <input type="radio" checked="checked" name="radio" />
+                    <input type="radio" checked="checked" name="radio">
                     <span class="checkmark"></span>
                 </label>
                 <label class="container2">Formulario de Registro
-                    <input type="radio" checked="checked" name="radio" />
+                    <input type="radio" checked="checked" name="radio">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -26,24 +130,24 @@
     </div>
     <div class="login-container">
         <h1>REGISTRATE</h1>
-        <form>
-            <input type="text" placeholder="Nombre Completo" aria-label="Nombre Completo" />
-            <input type="email" placeholder="Email" aria-label="Correo Electrónico" />
-            <input type="password" placeholder="Contraseña" aria-label="Contraseña" />
-            <input type="password" placeholder="Confirmar Contraseña" aria-label="Confirmar Contraseña" />
+        <form onsubmit="event.preventDefault(); registerWithEmail();">
+            <input type="text" placeholder="Nombre Completo" aria-label="Nombre Completo" id="nombre-completo">
+            <input type="email" placeholder="Email" aria-label="Correo Electrónico" id="email">
+            <input type="password" placeholder="Contraseña" aria-label="Contraseña" id="password">
+            <input type="password" placeholder="Confirmar Contraseña" aria-label="Confirmar Contraseña" id="confirm-password">
             <div class="condiciones">
                 <label class="aceptar-condiciones">Acepto las condiciones del servicio y la política de privacidad de FastWork
-                    <input type="checkbox" checked="checked" id="aceptar-condiciones" />
+                    <input type="checkbox" checked="checked" id="aceptar-condiciones">
                     <span class="checkmark1"></span>
                 </label>
             </div>
             <button type="submit" class="login-btn">Crear Cuenta</button>
             <div class="oauth-options">
-                <button class="google-btn">
+                <button type="button" class="google-btn" onclick="loginGoogle()">
                     <img src="../imgs/google.png" alt="Google Logo" class="google-icon">
                     <span class="btn-text">Continuar con Google</span>
                 </button>
-                <button class="facebook-btn">
+                <button type="button" class="facebook-btn" onclick="loginFacebook()">
                     <img src="../imgs/facebook3.png" alt="Facebook Logo" class="facebook-icon">
                     <span class="btn-text">Continuar con Facebook</span>
                 </button>
@@ -51,5 +155,8 @@
         </form>
         <p>¿Ya tienes una cuenta? <a href="#">Inicia Sesión</a></p>
     </div>
+
+    <!-- Elemento para mostrar la información del usuario -->
+    <div id="idmain"></div>
 </body>
 </html>
