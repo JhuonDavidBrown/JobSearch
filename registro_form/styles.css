@@ -235,7 +235,6 @@ input::placeholder {
   color: #fff;
   border: none;
   border-radius: 12px;
-  cursor: pointer;
   font-size: 18px;
   letter-spacing: 0.05em;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
