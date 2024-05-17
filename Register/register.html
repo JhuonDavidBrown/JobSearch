@@ -27,34 +27,18 @@
    <section id="hero">
       <div class="aspirante">
          <img src="../imgs/talento.png" class="talento" alt="aspirante">
-         <a href="../registro_form/Registrarse.html"><button class="t" onclick="setRole('talento')">Talento</button></a>
+         <a href="../registro_form/RegistrarseTalento.html"><button class="t">Talento</button></a>
          <button class="text1">Busca oportunidades</button>
       </div>
       <div class="ofertante">
          <img src="../imgs/ofertante.png" class="oferta" alt="ofertante">
-         <a href="../registro_form/Registrarse.html"><button class="o" onclick="setRole('ofertante')">Ofertante</button></a>
+         <a href="../registro_form/RegistrarseOfertante.html"><button class="o">Ofertante</button></a>
          <button class="text2">Busca talentos</button>
       </div>
    </section>
 </body>
 <footer>
     <p>¿Ya tienes una cuenta?</p>
-    <a href="LogIn">Inicia Sesión</a>
+    <a href="LogIn.html">Inicia Sesión</a>
 </footer>
-<script>
-    // Función para establecer el rol al seleccionar el tipo de usuario
-    function setRole(role) {
-        // Obtener todos los elementos de radio
-        var radios = document.getElementsByName('radio');
-        // Iterar sobre los elementos para deseleccionarlos
-        radios.forEach(function(radio) {
-            radio.checked = false;
-        });
-        // Seleccionar el radio del formulario de registro
-        document.querySelector('.container2 input').checked = true;
-
-        // Redirigir al formulario de registro con el parámetro de rol en la URL
-        window.location.href = '../registro_form/Registrarse.html?role=' + role;
-    }
-</script>
 </html>
