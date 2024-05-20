@@ -221,6 +221,9 @@ input {
   justify-content: center;
   align-items: center;
 }
+.trabajo-sunburst{
+  text-decoration: none;
+}
 .four-left .diseñador-multimedia {
   color: #bfd2d9;
 
