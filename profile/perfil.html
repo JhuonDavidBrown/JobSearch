@@ -28,40 +28,51 @@
       </div>
    </header>
    <section id="hero">
-      <div class="inform">
-         <div class="profile-pic-container">
-         <label >
-            <div class="profile-pic">
-               <img src="../imgs/prf.png" alt="x" height="80px" width="75px" />
-            </div>
-            <button class="overlay-button2" id="open2">+
-            </button>
-         </label>
-      </div>
-         <br>
-         <h2>Nombre</h2>
-         <h3>..</h3>
-         <HR width="55%" size="1" color=#2B5161>
-         <h5>Ocupación</h5>
-         <span class="pais"><img src="../imgs/pais.png" alt="">
-            <p>Colombia</p>
-         </span>
-         <div class="i">
-            <h3>Idiomas</h3>
-            <div class="idiomas">
-               <span>
-                  <p>Español</p>
-               </span>
-               <span>
-                  <p>Inglés</p>
-               </span>
-               <a href=""><button>+</button></a>
-            </div>
+      <div class="boton">
+         <div class="inform" id="informacion">
+            <div class="profile-pic-container">
+            <label >
+               <div class="profile-pic">
+                  <img src="../imgs/prf.png" alt="x" height="80px" width="75px" />
+               </div>
+               <button class="overlay-button2" id="open2">+
+               </button>
+            </label>
          </div>
-         <h3 class="redes">Redes Sociales</h3>
-         <button class="rs1"></button>
-         <button class="rs2"></button>
+            <h2>Nombre</h2>
+            <h3>..</h3>
+            <HR width="55%" size="1" color=#2B5161>
+            <h5 contenteditable="false">Ocupación</h5>
+            <span class="pais"><img src="../imgs/pais.png" alt="">
+               <p>Colombia</p>
+            </span>
+            <div class="i">
+               <h3 contenteditable="false">Idiomas</h3>
+               <div class="idiomas">
+                  <span>
+                     <p>Español</p>
+                  </span>
+                  <span>
+                     <p>Inglés</p>
+                  </span>
+                  <button contenteditable="false" id="agregarIdioma">+</button>
+               </div>
+            </div>
+            <h3 class="redes" contenteditable="false">Redes Sociales</h3>
+            <div class="redesContainer">
+               <span>
+                  <p>Red1</p>
+               </span>
+               <span>
+                  <p>Red2</p>
+               </span>
+               <button contenteditable="false" id="agregarRed">+</button>
+            </div>
+            
+         </div>
+         <button id="editarInform" class="btne">Editar</button>
       </div>
+      
       <div class="container2">
          <div class="portafolio">
             <h2>Portafolio</h2>

@@ -9,6 +9,12 @@
   const divExperiencia = document.getElementById('experienciaLaboral');
   const btnEditar = document.getElementById('editarResumen');
   const divResumen = document.getElementById('resumenT');
+  const btnInfor = document.getElementById('editarInform');
+  const divInformacion = document.getElementById('informacion');
+  const idiomasContainer = document.querySelector('.idiomas');
+  const agregarIdiomaBtn = document.getElementById('agregarIdioma');
+  const redesContainer = document.querySelector('.redesContainer');
+  const agregarRedBtn = document.getElementById('agregarRed');
 
 
 // Función para abrir el portafolio
@@ -39,6 +45,11 @@ botonEditar.addEventListener('click', () => {
   // Cambiar el texto del botón según el modo de edición
   botonEditar.textContent = divExperiencia.contentEditable === 'true' ? 'Guardar' : 'Editar';
 
+  // Si se entra en modo de edición, colocar el cursor en el div
+  if (divInformacion.contentEditable === 'true') {
+    divInformacion.focus();
+  }
+
   // Si se sale del modo de edición, guardar el contenido en una variable
   if (divExperiencia.contentEditable === 'false') {
     const contenidoEditado = divExperiencia.innerHTML;
@@ -55,10 +66,54 @@ btnEditar.addEventListener('click', () => {
   // Cambiar el texto del botón según el modo de edición
   btnEditar.textContent = divResumen.contentEditable === 'true' ? 'Guardar' : 'Editar';
 
+  // Si se entra en modo de edición, colocar el cursor en el div
+  if (divInformacion.contentEditable === 'true') {
+    divInformacion.focus();
+  }
+
   // Si se sale del modo de edición, guardar el contenido en una variable
   if (divResumen.contentEditable === 'false') {
     const contenidoEditado = divResumen.innerHTML;
     // Aquí puedes realizar alguna acción adicional con el contenido editado, como enviarlo al servidor o almacenarlo localmente
     console.log('Contenido editado:', contenidoEditado);
   }
+});
+
+// Agregar un evento click al botón
+btnInfor.addEventListener('click', () => {
+  // Alternar el modo de edición del div
+  divInformacion.contentEditable = divInformacion.contentEditable === 'true' ? 'false' : 'true';
+
+  // Cambiar el texto del botón según el modo de edición
+  btnInfor.textContent = divInformacion.contentEditable === 'true' ? 'Guardar' : 'Editar';
+
+  // Si se entra en modo de edición, colocar el cursor en el div
+  if (divInformacion.contentEditable === 'true') {
+    divInformacion.focus();
+  }
+
+  // Si se sale del modo de edición, guardar el contenido en una variable
+  if (divInformacion.contentEditable === 'false') {
+    const contenidoEditado = divInformacion.innerHTML;
+    // Aquí puedes realizar alguna acción adicional con el contenido editado, como enviarlo al servidor o almacenarlo localmente
+    console.log('Contenido editado:', contenidoEditado);
+  }
+});
+
+agregarIdiomaBtn.addEventListener('click', () => {
+  const nuevoIdioma = document.createElement('span');
+  const idiomaEditable = document.createElement('p');
+  idiomaEditable.contentEditable = true;
+  idiomaEditable.textContent = 'Nuevo idioma';
+  nuevoIdioma.appendChild(idiomaEditable);
+  idiomasContainer.insertBefore(nuevoIdioma, agregarIdiomaBtn);
+});
+
+agregarRedBtn.addEventListener('click', () => {
+  const nuevaRed = document.createElement('span');
+  const redEditable = document.createElement('p');
+  redEditable.contentEditable = true;
+  redEditable.textContent = 'Nueva Red';
+  nuevaRed.appendChild(redEditable);
+  redesContainer.insertBefore(nuevaRed, agregarRedBtn);
 });
