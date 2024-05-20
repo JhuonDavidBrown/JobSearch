@@ -16,6 +16,16 @@ h1 {
     margin-right: 70px;
 }
 
+.container2{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    .rtext{
+        margin-bottom: 2px;
+    }
+}
+
 .buscar{
     border-radius: 15px;
     box-shadow: 2px 2px 1px rgba(58, 57, 57, 0.5);
@@ -26,20 +36,19 @@ h1 {
 }
 
 .search1 img{
-    margin-top: 10px;
+    margin-top: 8px;
     padding: 2px;
 }
 
 .em {
     font-size: 1.1em;
     font-weight: bold;
-    padding: 9px 32px;
     border-radius: 15px;
     border: 1px;
+    padding: 9px 32px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     color: white;
     background-color: #3b89ac;
-    margin-top: 20px;
     text-align: center;
     letter-spacing: 0.06em;
 }
@@ -64,25 +73,22 @@ h1 {
 
 .container {
     max-width: unset;
-    margin: auto;
-    margin-left: 35px;
+    margin-left: 100px;
+    margin-bottom: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 header {
     background-color: #ebf3f7;
 }
 
-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 header nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 25px;
 }
 
 header a {
@@ -110,11 +116,19 @@ header a:hover {
     align-items: center; /* Alinear verticalmente en el centro */
     flex-direction: column;
     justify-content: center; /* Alinear horizontalmente en el centro */
-    width: 450px;
+    width: 400px;
     height: 750px;
     box-shadow: 2px 2px 4px rgba(132, 135, 137, 0.5);
-    border-radius: 20px;
-    background-color: #bfd2d9; 
+    background-color: #bfd2d9;
+    border-top-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    h2{
+        font-size: 30px;
+        margin-bottom: -1px;
+    }
+    h3, .redes{
+        font-size: 20px;
+    } 
 }
 
 .inform .pais{
@@ -129,6 +143,7 @@ header a:hover {
     padding-left: 10px;
     font-size: 19px;
     letter-spacing: 0.02em;
+    box-shadow: 1px 1px 1px #7597a4;
 }
 
 HR{
@@ -139,9 +154,11 @@ h5{
     margin-top: -8.5px;
     color: #2B5161;
 }
+
 .idiomas{
-    flex-direction: row;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: center;
     margin-top: -1px;
 }
@@ -151,6 +168,7 @@ h5{
     background-color: #98c0ce;
     border-radius: 25px;
     margin-right: 5px;
+    margin-bottom: 5px;
     font-weight: bold;
     font-size: 19px;
     letter-spacing: 0.02em;
@@ -158,6 +176,7 @@ h5{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 1px 1px #7597a4;
 }
 
 .i {
@@ -165,6 +184,13 @@ h5{
     flex-direction: column;
     align-items: center;
     margin-top: 22px;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.redesContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .idiomas button{
@@ -177,15 +203,54 @@ h5{
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
+    box-shadow: 1px 1px 1px #7597a4;
 }
 
-.inform .rs1, .rs2{
+.redesContainer span{
     height: 40px;
     width: 270px;
     border-radius: 25px;
     background-color: #98c0ce;
     border: 1px solid #98c0ce;
     margin-bottom: 7px;
+    font-size: 19px;
+    box-shadow: 1px 1px 1px #7597a4;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.redesContainer button{
+    border-radius: 50%;
+    background-color: #7497A6;
+    border: 1px solid #7497A6;
+    height: 32px;
+    width: 32px;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #7597a4;
+}
+.boton{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    .btne{
+        background-color: #22646E;
+        border-radius: 20px;
+        margin-top: 10px;
+        color: white;
+        padding: 5px 10px;
+        box-shadow: 2px 2px 2px rgba(57, 57, 57, 0.5);
+        border: 1px solid #1a4b53;
+        cursor: pointer;
+        padding: 8px 20px;
+        font-weight: bold;
+    }
 }
 
 .profile-pic-container {
@@ -252,17 +317,17 @@ h5{
     align-items: center; /* Alinear verticalmente en el centro */
     flex-direction: column;
     justify-content: center; /* Alinear horizontalmente en el centro */
-    width: 1000px;
-    height: 300px;
+    width: 980px;
+    height: 280px;
     box-shadow: 2px 2px 8px rgba(132, 135, 137, 0.5);
-    border-radius: 20px;
     background-color: #22646E;
     margin-left: 30px;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
 }
 
-
 .portafolio h2{
-    margin-top: -3px;
+    margin-top: -20px;
     margin-bottom: 20px;
     color: white;
     letter-spacing: 0.03em;
@@ -303,6 +368,148 @@ h5{
 .port-doc input[type="file"] {
     display: none;
 }
+
+.retro{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: row;
+    background-color: #245469;
+    border-radius: 20px;
+    color: white;
+    width: 820px;
+    height: 160px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    font-size: 18px;
+    line-height: 1.5;
+    box-shadow: 2px 2px 8px rgba(85, 87, 88, 0.5);
+}
+
+.points{
+    align-items: center;
+    justify-content: center;
+    background-color: #002535;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding-left: 15px;
+    margin-right: 15px;
+    padding-right: 10px;
+    width: 500px;
+    height: 160px;
+
+    p{
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: -20px;
+    }
+    h6{
+        color: white;
+        font-weight: bold;
+    }
+}
+
+.container3{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: row;
+}
+.experiencia{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    h2{
+        margin-bottom: 2px;
+    }
+    .edit{
+        background-color: #22646E;
+        border-radius: 20px;
+        margin-top: 10px;
+        color: white;
+        padding: 5px 10px;
+        box-shadow: 2px 2px 2px rgba(57, 57, 57, 0.5);
+        border: 1px solid #1a4b53;
+        cursor: pointer;
+        padding: 8px 20px;
+        font-weight: bold;
+    }
+}
+
+.experiencia .exptexto{
+    background-color: #98BFCE;
+    color: black;
+    width: 585px;
+    height: 230px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    font-size: 14.2px;
+    line-height: 1.2;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 30px;
+    font-weight: bold;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    box-shadow: 2px 2px 8px rgba(85, 87, 88, 0.5);
+    .linea{
+        margin-top: -2px;
+        margin-bottom: -2px;
+    }
+}
+
+.resumen{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 15px;
+    h2{
+        margin-bottom: 2px;
+    }
+    .edita{
+        background-color: #22646E;
+        border-radius: 20px;
+        margin-top: 10px;
+        color: white;
+        padding: 8px 20px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        border: 1px solid #1a4b53;
+        cursor: pointer;
+        font-weight: bold;
+    }
+}
+
+.resumen .text{
+    background-color: #98BFCE;
+    color: black;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    font-size: 14.2px;
+    line-height: 1.3;
+    width: 380px;
+    height: 230px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    box-shadow: 2px 2px 8px rgba(85, 87, 88, 0.5);
+}
+
 @media (min-width: 720px){
     header .container{
         flex-direction: row;

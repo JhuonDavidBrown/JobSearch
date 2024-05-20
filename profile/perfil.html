@@ -11,7 +11,7 @@
 <body>
    <header>
       <div class="container">
-         <img src="../imgs/logo.png" class="joblogo" alt="Logo" height="50px" width="70px">
+         <img src="../imgs/logo.png" class="joblogo" alt="Logo" height="70px" width="100px">
          <div class="search1">
             <img src="../imgs/buscar.png" height="30px" width="35px">
             <input type="search" class="buscar" placeholder="Buscar">
@@ -28,48 +28,94 @@
       </div>
    </header>
    <section id="hero">
-      <div class="inform">
-         <div class="profile-pic-container">
-         <label >
-            <div class="profile-pic">
-               <img src="../imgs/prf.png" alt="x" height="80px" width="75px" />
-            </div>
-            
+      <div class="boton">
+         <div class="inform" id="informacion">
+            <div class="profile-pic-container">
+            <label >
+               <div class="profile-pic">
+                  <img src="../imgs/prf.png" alt="x" height="80px" width="75px" />
+               </div>
                <button class="overlay-button2" id="open2">+
                </button>
+            </label>
+         </div>
+            <h2>Nombre</h2>
+            <h3>..</h3>
+            <HR width="55%" size="1" color=#2B5161>
+            <h5 contenteditable="false">Ocupación</h5>
+            <span class="pais"><img src="../imgs/pais.png" alt="">
+               <p>Colombia</p>
+            </span>
+            <div class="i">
+               <h3 contenteditable="false">Idiomas</h3>
+               <div class="idiomas">
+                  <span>
+                     <p>Español</p>
+                  </span>
+                  <span>
+                     <p>Inglés</p>
+                  </span>
+                  <button contenteditable="false" id="agregarIdioma">+</button>
+               </div>
+            </div>
+            <h3 class="redes" contenteditable="false">Redes Sociales</h3>
+            <div class="redesContainer">
+               <span>
+                  <p>Red1</p>
+               </span>
+               <span>
+                  <p>Red2</p>
+               </span>
+               <button contenteditable="false" id="agregarRed">+</button>
+            </div>
             
-            
-         </label>
+         </div>
+         <button id="editarInform" class="btne">Editar</button>
       </div>
-         <br>
-         <h2>Alexis Ortiz</h2>
-         <h3>Diseñador Multimedia</h3>
-         <HR width="40%" size="1" color=#2B5161>
-         <h5>Ocupación</h5>
-         <span class="pais"><img src="../imgs/pais.png" alt="">
-            <p>Colombia</p>
-         </span>
-         <div class="i">
-            <h3>Idiomas</h3>
-            <div class="idiomas">
-               <span>
-                  <p>Español</p>
-               </span>
-               <span>
-                  <p>Inglés</p>
-               </span>
-               <a href=""><button>+</button></a>
+      
+      <div class="container2">
+         <div class="portafolio">
+            <h2>Portafolio</h2>
+            <div class="port">
+               <button id="open">
+                  <span class="open-button">+</span> </button>
             </div>
          </div>
-         <h3 class="redes">Redes Sociales</h3>
-         <button class="rs1"></button>
-         <button class="rs2"></button>
-      </div>
-      <div class="portafolio">
-         <h2>Portafolio</h2>
-         <div class="port">
-            <button id="open">
-               <span class="open-button">+</span> </button>
+         <h2 class="rtext">Retroalimentación</h2>
+         <div class="retro">
+            <div class="points">
+               <p>4</p>
+               <h6>Puntos posibles: 10</h6>
+            </div>
+            <p>En comparación con otros usuarios de tu misma ocupación 
+               con la puntuación obtenida y el portafolio expuesto es posible
+               que los empleadores tengan dudas sobre tus habilidades y
+               experiencia en comparación con otros profesionales de la misma área.
+            </p>
+         </div>
+         <div class="container3">
+            <div class="experiencia">
+               <h2>Experiencia laboral</h2>
+               <div class="exptexto" id="experienciaLaboral" contenteditable="false">
+                  <p>Puesto: <br>Empresa: <br>
+                     Ubicación: <br>Periodo Laboral: </p>
+                  <HR class="linea" width="50%" size="1" color=#2B5161>
+                  <p>Funciones: </p>
+                  <ul>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                  </ul>
+               </div>
+               <button class ="edit" id="editarExperiencia">Editar</button>
+            </div>
+            <div class="resumen">
+               <h2>Resumen</h2>
+               <div class="text" id="resumenT" contenteditable="false">
+                  <p>Escriba una breve descripción de sus fortalezas y cualidades significativas que hacen que destaque en el campo en el cual se desempeña y que para los ofertantes sea atractivo.</p>
+               </div>
+               <button class ="edita" id="editarResumen">Editar</button>
+            </div>
          </div>
       </div>
    </section>
