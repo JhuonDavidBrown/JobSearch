@@ -154,7 +154,8 @@
            </div>
         </div>
      </div>
-     <script>const open = document.getElementById('open');
+     <script>
+        const open = document.getElementById('open');
         const modal_container = document.getElementById('modal_container');
         const close = document.getElementById('close');
         const modal = document.querySelector('.modal');
@@ -162,6 +163,7 @@
         close.addEventListener('click', () => {
           modal_container.classList.remove('show');
           modal.classList.remove('modal-close');
+          window.location.href = "../home_iniciado/index.html"; // Redirige a la página deseada
         });
         
         open.addEventListener('click', () => {
@@ -170,6 +172,7 @@
           setTimeout(() => {
             modal.classList.remove('modal-close');
           }, 0); 
-        }); </script>
+        });
+     </script>
 </body>
 </html>
