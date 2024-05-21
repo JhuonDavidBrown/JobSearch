@@ -1,19 +1,17 @@
 body {
   margin: 0 auto;
   width: 800px;
-  font-family:'Roboto', sans-serif;
-  background-color: #ebf3f7;
-}
+  font-family: 'Roboto', sans-serif ;
 
+}
 img{
   margin-top: 30px;
 }
-
 h1 {
   font-size: 24px;
   margin-top: 0;
   margin-bottom: 10px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.04em;
 
 }
 .container4 {
@@ -22,118 +20,7 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-/* The container */
-.radio-container {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  margin-left: 110px;
-  margin-top: 30px;
-  margin-block-end: 20px;
-  font-weight: 555;
-}
-.container {
-  vertical-align: middle;
-  position: relative;
-  padding-left: 50px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 20px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.container2 {
-  vertical-align: middle;
-  position: relative;
-  padding-left: 50px;
-  margin-bottom: 12px;
-  margin-left: 60px;
-  cursor: pointer;
-  font-size: 20px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
-  transition: transform 0.50s ease-in-out;
 
-}
-.checkmark:hover input ~ .checkmark {
-  transform: scale(0.100);
-}
-.checkmark:active {
-  transform: scale(0.100);
-}
-
-/* eliminar los botones predeterminados*/
-
-.container input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-.container2 input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* 
-Crear un botón de opción personalizado*/
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 50px;
-  height: 30px;
-  width: 30px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-
-/*Al pasar el mouse, agregue un color de fondo gris. */
-.container2:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* Cuando el botón de opción esté marcado, agregue un fondo azul */
-
-.container input:checked ~ .checkmark {
-  background-color: #003851;
-}
-.container2 input:checked ~ .checkmark {
-  background-color: #003851;
-}
-
-/* Cree el indicador (el punto/círculo, oculto cuando no está marcado)*/
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-/* Mostrar el indicador (punto/círculo) cuando esté marcado */
-
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-.container2 input:checked ~ .checkmark:after {
-  display: block;
-}
 
 .login-container {
   margin-top: 1px;
@@ -142,7 +29,6 @@ Crear un botón de opción personalizado*/
   height: 580px;
   padding: 60px;
   border: 2px solid #d8ecfd;
-  background-color: rgb(245, 245, 245);
   border-radius: 30px;
   text-align: center;
   margin: 0 auto;
@@ -175,6 +61,8 @@ input::placeholder {
   background-color: #eee;
   border-radius: 20%;
   border: 1px solid #6fafcc;
+  cursor: pointer;
+  
   transition: transform 0.50s ease-in-out;
 
 }
@@ -205,15 +93,19 @@ input::placeholder {
   opacity: 0;
   cursor: pointer;
 }
+.condiciones input[type="checkbox"]:not(:checked) ~ .checkmark1 {
+  background-color: #eee;
+}
 
 /*Al pasar el mouse, agregue un color de fondo gris. */
 .aceptar-condiciones:hover input ~ .checkmark1 {
   background-color: #ccc;
+
 }
 /* Cuando el botón de opción esté marcado, agregue un fondo azul */
 
 .aceptar-condiciones input:checked ~ .checkmark1 {
-  background-color: #002535;
+  background-color: #01335c;
 }
 /* Cree el indicador (el punto/círculo, oculto cuando no está marcado)*/
 
@@ -229,14 +121,13 @@ input::placeholder {
 }
 
 .login-btn {
-  width: 85%;
+  width: 100%;
   padding: 10px;
-  background-color: #002535;
+  background-color: #1c2844;
   color: #fff;
   border: none;
   border-radius: 12px;
-  font-size: 18px;
-  letter-spacing: 0.05em;
+  cursor: pointer;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -283,6 +174,105 @@ input::placeholder {
   
   
 }
+/*ventana*/
+.modal-container{
+  display: flex;
+  background-color: rgba(5, 5, 5, 0.89);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+.show{
+  pointer-events: auto;
+  opacity: 1;
+}
+.modal{
+  background-color: #e8f3ff;
+  width: 600px;
+  max-width: 100%;
+  padding: 20px 19px;
+  border-radius: 25px;
+  box-shadow: inset 0 0 10px rgba(14, 41, 132, 0.85); /* Sombra hacia dentro */
+  text-align: center;
+  animation-name: modalAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  position: fixed;
+  right: -50vw;
+  top: 50%;
+  transform: translateX(auto);
+  transition: right 0.6s ease;
+  
+}
+.modal h1{
+  margin: 0px;
+  font-size: 28px;
+  font-family:'Roboto', sans-serif;
 
+}
+.circle-check {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #7f8588;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 255px;
+  margin-top: 9px;
+  margin-bottom: 20px;
+}
+.checkmark {
+  color: #000000;
+  font-size: 30px;
+  font-weight: 1000;
+}
+.checkmark:hover input ~ .checkmark {
+  transform: scale(0.100);
+}
+.checkmark:active {
+  transform: scale(0.100);
+}
+.button_cerrar button{
+font-size: 0.9em;
+font-weight: bold;
+padding: 12px 76px;
+border-radius: 30px;
+border: 1px solid #003851;
+box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+color: white;
+background-color: #003851;
+margin-top: 25px;
+text-align: center;
+letter-spacing: 0.04em;
+cursor: pointer;
+}
 
+.modal.modal-close {
+  animation-name: modalCloseAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes modalCloseAnimation {
+  0% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(100%);
+    opacity: 0;
+   
+  }
+}
+.modal-container.show .modal {
+  right: calc(50% - 300px); 
+  transform: translate(0, -50%);
+}
 
