@@ -127,7 +127,7 @@
                     <span class="checkmark1"></span>
                 </label>
             </div>
-            <a href="../Ingresar_inge/Ingresar.html"><button type="submit" class="login-btn">Crear Cuenta</button></a>
+            <a href="../Ingresar_inge/Ingresar.html"><button type="submit" class="login-btn" id="open">Crear Cuenta</button></a>
             <div class="oauth-options">
                 <button type="button" class="google-btn" onclick="loginGoogle()">
                     <img src="../imgs/google.png" alt="Google Logo" class="google-icon">
@@ -141,7 +141,35 @@
         </form>
         <p>¿Ya tienes una cuenta? <a href="../Ingresar_inge/Ingresar.html">Inicia Sesión</a></p>
     </div>
-
     <div id="idmain"></div>
+    <div class="modal-container" id="modal_container">
+        <div class="modal">
+           <div class="circle-check">
+              <span class="checkmark">&#10003;</span>
+            </div>
+           <h1>Cuenta creada con éxito.</h1>
+           <h1> Recuerda revisar tu correo electrónico para confirmarlo.</h1>
+           <div class="button_cerrar">
+           <button id="close">Cerrar</button>
+           </div>
+        </div>
+     </div>
+     <script>const open = document.getElementById('open');
+        const modal_container = document.getElementById('modal_container');
+        const close = document.getElementById('close');
+        const modal = document.querySelector('.modal');
+        
+        close.addEventListener('click', () => {
+          modal_container.classList.remove('show');
+          modal.classList.remove('modal-close');
+        });
+        
+        open.addEventListener('click', () => {
+          modal_container.classList.add('show');
+          modal.classList.add('modal-close');
+          setTimeout(() => {
+            modal.classList.remove('modal-close');
+          }, 0); 
+        }); </script>
 </body>
 </html>
