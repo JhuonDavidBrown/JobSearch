@@ -38,6 +38,20 @@ h1 {
 .search1 img{
     margin-top: 8px;
     padding: 2px;
+    transition: all 0.3s;
+}
+.search1 img:hover{
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.joblogo{
+    transition: all 0.3s;
+}
+
+.joblogo:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .em {
@@ -51,11 +65,13 @@ h1 {
     background-color: #3b89ac;
     text-align: center;
     letter-spacing: 0.06em;
+    transition: all 0.3s;
 }
 
 .em:hover {
     background-color: #002535;
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 .ntf, .msj, .prf{
@@ -65,10 +81,12 @@ h1 {
     background-color: #bfd2d9;
     width: 47px;
     height: 45px;
+    transition: all 0.3s;
 }
 
-.ntf, .msj, .prf:hover {
+.ntf:hover, .msj:hover, .prf:hover {
     cursor: pointer;
+    transform: scale(1.2);
 }
 
 .container {
@@ -204,6 +222,10 @@ h5{
     font-weight: bold;
     cursor: pointer;
     box-shadow: 1px 1px 1px #7597a4;
+    transition: all 0.3s;
+}
+.idiomas button:hover{
+    transform: scale(1.2);
 }
 
 .redesContainer span{
@@ -233,6 +255,10 @@ h5{
     font-weight: bold;
     cursor: pointer;
     box-shadow: 1px 1px 1px #7597a4;
+    transition: all 0.3s;
+}
+.redesContainer button:hover{
+    transform: scale(1.2);
 }
 .boton{
     display: flex;
@@ -250,6 +276,10 @@ h5{
         cursor: pointer;
         padding: 8px 20px;
         font-weight: bold;
+        transition: all 0.3s;
+    }
+    .btne:hover{
+        transform: scale(1.1);
     }
 }
 
@@ -435,6 +465,10 @@ h5{
         cursor: pointer;
         padding: 8px 20px;
         font-weight: bold;
+        transition: all 0.3s;
+    }
+    .edit:hover{
+        transform: scale(1.1);
     }
 }
 
@@ -485,6 +519,10 @@ h5{
         border: 1px solid #1a4b53;
         cursor: pointer;
         font-weight: bold;
+        transition: all 0.3s;
+    }
+    .edita:hover{
+        transform: scale(1.1);
     }
 }
 
