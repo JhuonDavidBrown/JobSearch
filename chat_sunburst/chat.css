@@ -267,6 +267,21 @@ header a:hover {
     }
 }
 
+.container2{
+    display: flex;
+    align-items: center; /* Alinear verticalmente en el centro */
+    flex-direction: column;
+    justify-content: center; /* Alinear horizontalmente en el centro */
+    width: 980px;
+    height: 750px;
+    box-shadow: 2px 2px 8px rgba(132, 135, 137, 0.5);
+    background-color: #eff1f2;
+    border: 1px solid #d1d8da;
+    margin-left: 30px;
+    border-top-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+}
+
 HR{
     margin-top: -15px;
 }
@@ -436,20 +451,6 @@ h5{
 
 .profile-pic input[type="file"] {
     display: none;
-}
-
-.portafolio{
-    display: flex;
-    align-items: center; /* Alinear verticalmente en el centro */
-    flex-direction: column;
-    justify-content: center; /* Alinear horizontalmente en el centro */
-    width: 980px;
-    height: 280px;
-    box-shadow: 2px 2px 8px rgba(132, 135, 137, 0.5);
-    background-color: #22646E;
-    margin-left: 30px;
-    border-top-left-radius: 32px;
-    border-bottom-right-radius: 32px;
 }
 
 .portafolio h2{
