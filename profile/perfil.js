@@ -132,4 +132,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
       resumenTElement.setAttribute('contenteditable', !isEditable);
       editarResumenButton.textContent = isEditable ? 'Editar' : 'Guardar';
   });
+  // Obtener referencias a los elementos
+ const msgBtn = document.getElementById('msgBtn');
+ const msgContainer = document.getElementById('container_nmp');
+ const notiBtn = document.getElementById('notiBtn');
+ const notiContainer = document.getElementById('container_n');
+ 
+ // Función para alternar la visibilidad de la ventana de mensajes
+ function toggleMsgContainer() {
+     if (msgContainer.style.display === 'none') {
+         msgContainer.style.display = 'block';
+         notiContainer.style.display = 'none'; // Cerrar la ventana de notificaciones
+     } else {
+         msgContainer.style.display = 'none';
+     }
+ }
+ 
+ // Función para alternar la visibilidad de la ventana de notificaciones
+ function toggleNotiContainer() {
+     if (notiContainer.style.display === 'none') {
+         notiContainer.style.display = 'block';
+         msgContainer.style.display = 'none'; // Cerrar la ventana de mensajes
+     } else {
+         notiContainer.style.display = 'none';
+     }
+ }
+ 
+ // Agregar eventos de clic a los botones
+ msgBtn.addEventListener('click', toggleMsgContainer);
+ notiBtn.addEventListener('click', toggleNotiContainer);
 });
