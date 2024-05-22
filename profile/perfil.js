@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const informacionElement = document.getElementById('informacion');
   const agregarIdiomaButton = document.getElementById('agregarIdioma');
   const agregarRedButton = document.getElementById('agregarRed');
+  const idiomasContainer = document.querySelector('.idiomas');
+  const redesContainer = document.querySelector('.redesContainer');
   const editarExperienciaButton = document.getElementById('editarExperiencia');
   const experienciaLaboralElement = document.getElementById('experienciaLaboral');
   const editarResumenButton = document.getElementById('editarResumen');
@@ -109,6 +111,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           const newLangElement = document.createElement('span');
           newLangElement.innerHTML = `<p>${newLang}</p>`;
           document.querySelector('.idiomas').appendChild(newLangElement);
+          idiomasContainer.insertBefore(newLangElement, agregarIdiomaButton);
       }
   });
 
@@ -118,6 +121,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           const newRedElement = document.createElement('span');
           newRedElement.innerHTML = `<p>${newRed}</p>`;
           document.querySelector('.redesContainer').appendChild(newRedElement);
+          redesContainer.insertBefore(newRedElement, agregarRedButton);
       }
   });
 
