@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>JobSearch - Registro Ofertante</title>
+    <title>JobSearch - Registro ofertante</title>
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
@@ -58,8 +58,6 @@
 
         function loginGoogle() {
             var provider = new firebase.auth.GoogleAuthProvider();
-            function loginGoogle() {
-            var provider = new firebase.auth.GoogleAuthProvider();
             provider.addScope('https://www.googleapis.com/auth/plus.login');
 
             firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -82,7 +80,7 @@
                 console.log(error.message);
             });
         }
-        }    
+
         function loginFacebook() {
             var provider = new firebase.auth.FacebookAuthProvider();
             provider.addScope('user_birthday');
@@ -142,6 +140,7 @@
         <p>¿Ya tienes una cuenta? <a href="../Ingresar_inge/Ingresar.html">Inicia Sesión</a></p>
     </div>
     <div id="idmain"></div>
+
     <div class="modal-container" id="modal_container">
         <div class="modal">
            <div class="circle-check">
@@ -163,7 +162,7 @@
         close.addEventListener('click', () => {
           modal_container.classList.remove('show');
           modal.classList.remove('modal-close');
-          window.location.href = "../home_iniciado/index.html"; // Redirige a la página deseada
+          window.location.href = "../home_iniciado/home.html"; // Redirige a la página deseada
         });
         
         open.addEventListener('click', () => {
@@ -172,7 +171,6 @@
           setTimeout(() => {
             modal.classList.remove('modal-close');
           }, 0); 
-        });
-     </script>
+        });</script>
 </body>
 </html>

@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css" />
   <title>JobSearch</title>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+  <script src="auth.js"></script>
 </head>
 <body>
   <img src="../imgs/logo.png" alt="login-icon" height="90px" width="120px" />
   <div class="login-container2">
     <h1>INGRESAR</h1>
-    <form>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Contraseña" />
+    <form onsubmit="event.preventDefault(); loginWithEmail();">
+      <input type="email" placeholder="Email" id="email" required />
+      <input type="password" placeholder="Contraseña" id="password" required />
       <div class="boton_recordar">
         <label class="recordar">
           Recuerdame
@@ -23,20 +27,20 @@
         </label>
       </div>
       <button type="submit" class="login-btn">Ingresar</button>
-      <HR width="70%" size="1" color=#0396da>
+      <hr width="70%" size="1" color="#0396da">
       <div class="oauth-options">
-        <button class="google-btn">
+        <button type="button" class="google-btn" onclick="loginGoogle()">
           <img src="../imgs/google.png" alt="Google Logo" class="google-icon">
           <span class="btn-text">Continuar con Google</span>
         </button>
-        <button class="facebook-btn">
+        <button type="button" class="facebook-btn" onclick="loginFacebook()">
           <img src="../imgs/facebook3.png" alt="Facebook Logo" class="facebook-icon">
           <span class="btn-text">Continuar con Facebook</span>
         </button>
       </div>
     </form>
-    <HR width="70%" size="1" color=#0396da>
-    <p>¿Aún no eres miembro? <a href="../registro/register.html">Registrate</a></p>
+    <hr width="70%" size="1" color="#0396da">
+    <p>¿Aún no eres miembro? <a href="../Register/register.html">Regístrate</a></p>
   </div>
 </body>
 </html>
