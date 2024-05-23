@@ -704,7 +704,7 @@ h5{
   .port-doc:hover,
   .close-button2:hover,
   .profile-pic2:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: #81bcd1;
   }
 

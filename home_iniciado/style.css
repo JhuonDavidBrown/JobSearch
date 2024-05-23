@@ -54,18 +54,14 @@ body {
   border-radius: 20px;
   transition: all 0.3s;
 }
-.nav-right .boton-empleos:hover {
-  transform: scale(1.2);
+.nav-right .boton-empleos:hover,
+.icono-mensajes:hover,
+.icono-notificacion:hover,
+.icono-perfil:hover {
+  transform: scale(1.1);
+  background-color: #81bcd1;
 }
-.nav-right .icono-mensajes:hover {
-  transform: scale(1.2);
-}
-.nav-right .icono-notificacion:hover {
-  transform: scale(1.2);
-}
-.nav-right .icono-perfil:hover {
-  transform: scale(1.2);
-}
+
 .nav-mid {
   height: 50px;
   width: 600px;
@@ -304,8 +300,8 @@ input {
 .container_nmp {
   display: none;
   position: absolute;
-  top: 75px; /* Ajusta esta posición según sea necesario */
-  left: 69%;
+  top: 80px; /* Ajusta esta posición según sea necesario */
+  left: 64%;
   color: #000000;
   width: 355px;
   height: 500px;
@@ -329,6 +325,9 @@ header{
 .modal_1 {
   font-size: 4px;
   margin-top: -60px;
+}
+.modal_1 h1{
+  font-size: 15px;
 }
 
 .modal_1 hr {
@@ -391,8 +390,8 @@ header{
 .container_n {
   display: none;
   position: fixed;
-  top: 75px; /* Ajusta esta posición según sea necesario */
-  left: 73%;
+  top: 80px; /* Ajusta esta posición según sea necesario */
+  left: 67%;
   color: #000000;
   width: 360px;
   height: 455px;
@@ -414,6 +413,9 @@ header{
 .modal_2 {
   font-size: 4px;
   margin-top: -60px;
+}
+.modal_2 h1{
+  font-size: 15px;
 }
 
 .modal_2 hr {
