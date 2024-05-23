@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobSearch/profile</title>
     <link rel="stylesheet" href="perfil.css">
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
     <script src="perfil.js" defer></script>
+
+    <script>
+        
+        // Configuración de Firebase
+        const firebaseConfig = {
+                apiKey: "AIzaSyDKTveJUKHlY4ioPcYIoEsAWaOtmQ5msBw",
+                authDomain: "jobsearch-284fa.firebaseapp.com",
+                projectId: "jobsearch-284fa",
+                storageBucket: "jobsearch-284fa.appspot.com",
+                messagingSenderId: "835836872345",
+                appId: "1:835836872345:web:ed8cfb1d43bbcc73715a08",
+                measurementId: "G-47J1N1DVLC"
+            };
+
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
+        const db = firebase.firestore();
+    </script>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <a href="../home_iniciado/index.html"><img src="../imgs/logo.png" class="joblogo" alt="Logo" height="70px"
-                    width="100px"></a>
+            <a href="../home_iniciado/home.html"><img src="../imgs/logo.png" class="joblogo" alt="Logo" height="70px" width="100px"></a>
             <div class="search1">
                 <img src="../imgs/buscar.png" height="30px" width="35px">
                 <input type="search" class="buscar" placeholder="Buscar">
@@ -25,18 +43,18 @@
                 <a href="../empleos/empleos.html"><button class="em">Empleos</button></a>
                 <a><button class="msj" id="msgBtn"><img src="../imgs/msj.png" alt="x" height="29px" width="28px" /></button></a>
                 <a><button class="ntf" id="notiBtn"><img src="../imgs/ntf.png" alt="x" height="33px" width="21px" /></button></a>
-                <a href="../profile/perfil.html"><button class="prf"><img src="../imgs/prf.png" alt="x" height="25px"
-                        width="22px" /></button></a>
+                <a href="../profile/perfil.html"><button class="prf"><img src="../imgs/prf.png" alt="x" height="25px" width="22px" /></button></a>
             </nav>
         </div>
     </header>
+
     <section id="hero">
         <div class="boton">
             <div class="inform" id="informacion">
                 <div class="profile-pic-container">
                     <label>
                         <div class="profile-pic">
-                            <img src="../imgs/prf.png" alt="x" height="80px" width="75px" />
+                            <img id="profile-pic" src="../imgs/prf.png" alt="x" height="80px" width="75px" />
                         </div>
                         <button class="overlay-button2" id="open2">+</button>
                     </label>
@@ -78,7 +96,11 @@
                 <h2>Portafolio</h2>
                 <div class="port">
                     <button id="open">
-                        <span class="open-button">+</span> </button>
+                        <span class="open-button">+</span>
+                    </button>
+                    <input type="file" id="fileInput" accept=".pdf, .png, .jpeg" style="display: none;" />
+                    <p id="uploadMessage"></p>
+                    <div id="portfolioDisplay"></div>
                 </div>
             </div>
             <h2 class="rtext">Retroalimentación</h2>
@@ -97,8 +119,7 @@
                 <div class="experiencia">
                     <h2>Experiencia laboral</h2>
                     <div class="exptexto" id="experienciaLaboral" contenteditable="false">
-                        <p>Puesto: <br>Empresa: <br>
-                            Ubicación: <br>Periodo Laboral: </p>
+                        <p>Puesto: <br>Empresa: <br>Ubicación: <br>Periodo Laboral: </p>
                         <hr class="linea" width="50%" size="1" color="#2B5161">
                         <p>Funciones: </p>
                         <ul>
@@ -121,6 +142,7 @@
             </div>
         </div>
     </section>
+
     <div class="modal-container" id="modal_container">
         <div class="modal">
             <div class="modal-header">
@@ -145,6 +167,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal-container2" id="modal_container2">
         <div class="modal">
             <div class="modal-header">
@@ -169,84 +192,98 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container_nmp" id="container_nmp">
         <div class="encabezado">
-          <header>
-            <div class="modal_1">
-              <h1>Mensajes</h1>
-              <hr width="115%" size="2" color="#0396da">
-            </div>
-          </header>
+            <header>
+                <div class="modal_1">
+                    <h1>Mensajes</h1>
+                    <hr width="115%" size="2" color="#0396da">
+                </div>
+            </header>
         </div>
         <div class="mensajes">
-           <a href=".."><div class="mensaje">
-            <img src="../imgs/trabajo1.png" alt="Trabajo 1">
-            <div class="mensaje-info">
-              <h2>Sunburst Media</h2>
-              <p>Estimado Alexis, En primer lugar, queremos agradecerle por su interés en nuestra empresa y por su aplicación a la vacante de Diseñador Multimedia...</p>
-            </div>
-          </div>
-          <a href=".."><div class="mensaje">
-            <img src="../imgs/trabajo2.png" alt="Trabajo 2">
-            <div class="mensaje-info">
-              <h2>Codeworks</h2>
-              <p>Estimado Alexis Ortiz, En nombre de Codeworks, nos complace informarle que ha sido aceptado para continuar en nuestro proceso de selección para el puesto de Desarrollador Front-end...</p>
-            </div>
-          </div></a>
-          <a href=".."><div class="mensaje">         
-              <img src="../imgs/trabajo3.png" alt="Trabajo 3">
-            <div class="mensaje-info">
-              <h2>PixelFactory</h2>
-              <p>Estimado Alexis Ortiz, En nombre de PixelFactory, nos complace informarle que ha sido aceptado para el puesto de Diseñador Multimedia junior en nuestra agencia...</p>
-            </div>
-          </div></a>
-         
+            <a href="..">
+                <div class="mensaje">
+                    <img src="../imgs/trabajo1.png" alt="Trabajo 1">
+                    <div class="mensaje-info">
+                        <h2>Sunburst Media</h2>
+                        <p>Estimado Alexis, En primer lugar, queremos agradecerle por su interés en nuestra empresa y por su aplicación a la vacante de Diseñador Multimedia...</p>
+                    </div>
+                </div>
+            </a>
+            <a href="..">
+                <div class="mensaje">
+                    <img src="../imgs/trabajo2.png" alt="Trabajo 2">
+                    <div class="mensaje-info">
+                        <h2>Codeworks</h2>
+                        <p>Estimado Alexis Ortiz, En nombre de Codeworks, nos complace informarle que ha sido aceptado para continuar en nuestro proceso de selección para el puesto de Desarrollador Front-end...</p>
+                    </div>
+                </div>
+            </a>
+            <a href="..">
+                <div class="mensaje">
+                    <img src="../imgs/trabajo3.png" alt="Trabajo 3">
+                    <div class="mensaje-info">
+                        <h2>PixelFactory</h2>
+                        <p>Estimado Alexis Ortiz, En nombre de PixelFactory, nos complace informarle que ha sido aceptado para el puesto de Diseñador Multimedia junior en nuestra agencia...</p>
+                    </div>
+                </div>
+            </a>
         </div>
-      </div>
-      <div class="container_n" id="container_n">
+    </div>
+
+    <div class="container_n" id="container_n">
         <div class="encabezado2">
-          <header>
-            <div class="modal_2">
-              <h1>Notificaciones</h1>
-              <hr width="115%" size="2" color="#0396da">
-            </div>
-          </header>
+            <header>
+                <div class="modal_2">
+                    <h1>Notificaciones</h1>
+                    <hr width="115%" size="2" color="#0396da">
+                </div>
+            </header>
         </div>
         <div class="notificaciones">
-           <a href=""><div class="notificacion">
-            <img src="../imgs/notificaciones1.png" alt="notificaciones1">
-            <div class="notificaciones-info">
-              <p>La salud mental es importante, especialmente si buscas trabajo.</p>
-            </div>
-          </div>
-          <a href=".."><div class="notificacion">
-            <img src="../imgs/notificaciones.png" alt="notificaciones2">
-            <div class="notificaciones-info">
-              <p>ORBIDI está contratando Diseñador/a UI/UX. Consulta esta y otras recomendaciones de empleo.</p>
-            </div>
-          </div></a>
-          <a href=".."><div class="notificacion">         
-              <img src="../imgs/notificaciones3.png" alt="notificaciones3">
-            <div class="notificaciones-info">
-              <p>Estimado Alexis Ortiz, En nombre de PixelFactory, nos complace informarle que ha sido aceptado para el puesto de Diseñador Multimedia junior en nuestra agencia...</p>
-            </div>
-          </div></a>
-          <a href=""><div class="notificacion">         
-           <img src="../imgs/notificaciones5.png" alt="notificaciones4">
-         <div class="notificaciones-info">
-           <p>Conversion está contratando Junior Graphic Designer. Consulta esta y otras recomendaciones de empleo.</p>
-         </div>
-       </div></a>
-       <a href=".."><div class="notificacion">         
-        <img src="../imgs/notificaciones6.png" alt="notificaciones5">
-      <div class="notificaciones-info">
-        <p>KPN Safety Solutions está contratando Diseñador multimedia. Consulta esta y otras recomendaciones de empleo.</p>
-      </div>
-    </div></a>
-       
+            <a href="">
+                <div class="notificacion">
+                    <img src="../imgs/notificaciones1.png" alt="notificaciones1">
+                    <div class="notificaciones-info">
+                        <p>La salud mental es importante, especialmente si buscas trabajo.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="..">
+                <div class="notificacion">
+                    <img src="../imgs/notificaciones.png" alt="notificaciones2">
+                    <div class="notificaciones-info">
+                        <p>ORBIDI está contratando Diseñador/a UI/UX. Consulta esta y otras recomendaciones de empleo.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="..">
+                <div class="notificacion">
+                    <img src="../imgs/notificaciones3.png" alt="notificaciones3">
+                    <div class="notificaciones-info">
+                        <p>Estimado Alexis Ortiz, En nombre de PixelFactory, nos complace informarle que ha sido aceptado para el puesto de Diseñador Multimedia junior en nuestra agencia...</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="notificacion">
+                    <img src="../imgs/notificaciones5.png" alt="notificaciones4">
+                    <div class="notificaciones-info">
+                        <p>Conversion está contratando Junior Graphic Designer. Consulta esta y otras recomendaciones de empleo.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="..">
+                <div class="notificacion">
+                    <img src="../imgs/notificaciones6.png" alt="notificaciones5">
+                    <div class="notificaciones-info">
+                        <p>KPN Safety Solutions está contratando Diseñador multimedia. Consulta esta y otras recomendaciones de empleo.</p>
+                    </div>
+                </div>
+            </a>
         </div>
-      </div>
+    </div>
 </body>
-
 </html>
