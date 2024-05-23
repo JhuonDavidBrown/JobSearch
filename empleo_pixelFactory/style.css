@@ -10,6 +10,9 @@ body{
         font-weight: weight;
         background-color: #eff1f2;
 }
+main{
+  margin-top: 29px;
+}
 .header {
     background-color: #eff1f2;
     width: 100%;
@@ -96,9 +99,9 @@ input{
 .diseador-multimedia {
     width: 500px;
     height: 50px;
-    padding-left: 120px;
-    padding-right: 60px;
-    position: relative;
+    margin: 0 50% 0 22%;
+    right: 10px;
+    position: absolute;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -107,9 +110,9 @@ input{
     box-sizing: border-box; 
 }
 .close{
-    box-sizing: border-box;
-    padding-right: 168.367px;
-    padding-left: 600px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 .diseador-multimedia-wrapper {
     margin: 0 auto;
