@@ -5,13 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const profilePic = document.getElementById('profile-pic');
     const portfolioDisplay = document.getElementById('portfolioDisplay');
 
-
     const uploadFile = (file, path) => {
         return firebase.storage().ref(path).put(file).then(snapshot => {
             return snapshot.ref.getDownloadURL();
         });
     };
-
 
     const checkAuth = () => {
         return new Promise((resolve, reject) => {
@@ -23,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-
 
     const ensureUserDocument = async (user) => {
         const userDocRef = firebase.firestore().collection('users').doc(user.uid);
@@ -38,20 +35,28 @@ document.addEventListener('DOMContentLoaded', function() {
         return userDocRef;
     };
 
-
     fileInput.addEventListener('change', async (event) => {
-        const file = event.target.files[0];
-        if (file) {
+        const files = event.target.files;
+        if (files.length > 0) {
             try {
                 const user = await checkAuth();
                 const userDocRef = await ensureUserDocument(user);
-                const downloadURL = await uploadFile(file, `portfolios/${user.uid}/${file.name}`);
+                const uploadedFiles = [];
+                
+                for (const file of files) {
+                    const downloadURL = await uploadFile(file, `portfolios/${user.uid}/${file.name}`);
+                    uploadedFiles.push({
+                        name: file.name,
+                        url: downloadURL
+                    });
+                }
+                
                 await userDocRef.update({
-                    portfolioURL: downloadURL,
-                    portfolioName: file.name
+                    portfolio: firebase.firestore.FieldValue.arrayUnion(...uploadedFiles)
                 });
+
                 uploadMessage.textContent = 'Portafolio subido con éxito.';
-                displayPortfolio(file.name, downloadURL);
+                displayPortfolio(uploadedFiles);
             } catch (error) {
                 console.error('Error al subir el archivo:', error);
                 uploadMessage.textContent = 'Error al subir el archivo.';
@@ -59,14 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
     profilePicInput.addEventListener('change', async (event) => {
         const file = event.target.files[0];
         if (file) {
             try {
                 const user = await checkAuth();
-                const userDocRef = await ensureUserDocument(user);
                 const downloadURL = await uploadFile(file, `profile_pictures/${user.uid}/${file.name}`);
+                const userDocRef = await ensureUserDocument(user);
                 await userDocRef.update({
                     profilePicURL: downloadURL
                 });
@@ -77,16 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
     document.getElementById('open').addEventListener('click', () => {
         fileInput.click();
     });
 
-
     document.getElementById('open2').addEventListener('click', () => {
         profilePicInput.click();
     });
-
 
     const loadUserProfile = async () => {
         try {
@@ -98,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (userData.profilePicURL) {
                     profilePic.src = userData.profilePicURL;
                 }
-                if (userData.portfolioURL && userData.portfolioName) {
-                    displayPortfolio(userData.portfolioName, userData.portfolioURL);
+                if (userData.portfolio) {
+                    displayPortfolio(userData.portfolio);
                 }
                 document.getElementById('user-name').textContent = userData.name || 'Nombre';
             }
@@ -108,11 +109,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-
-    const displayPortfolio = (fileName, fileURL) => {
-        portfolioDisplay.innerHTML = `<p><a href="${fileURL}" download>${fileName}</a></p>`;
+    const displayPortfolio = (files) => {
+        portfolioDisplay.innerHTML = '';
+        files.forEach(file => {
+            const fileElement = document.createElement('p');
+            const fileLink = document.createElement('a');
+            fileLink.href = file.url;
+            fileLink.textContent = file.name;
+            fileLink.download = file.name;
+            fileElement.appendChild(fileLink);
+            portfolioDisplay.appendChild(fileElement);
+        });
     };
-
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
