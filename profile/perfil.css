@@ -92,12 +92,12 @@ h1 {
 
 .container {
     max-width: unset;
-    margin-left: 100px;
     margin-bottom: -10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #ebf3f7;
 }
 
 header {
@@ -148,6 +148,24 @@ header a:hover {
     }
     h3, .redes{
         font-size: 20px;
+    }
+    .log-out{
+        font-size: 19px;
+        font-weight: bold;
+        border-radius: 20px;
+        border: 1px;
+        padding: 10px 40px;
+        box-shadow: 1px 1px 1px #7597a4;
+        color: white;
+        background-color: #bb1b28;
+        text-align: center;
+        letter-spacing: 0.03em;
+        transition: all 0.3s;
+        margin-top: 10px;
+    }
+    .log-out:hover{
+        transform: scale(1.1);
+        cursor: pointer;
     } 
 }
 
@@ -832,9 +850,7 @@ header{
     background-color: #ffffff;
     
 }
-header{
-    background-color: #fff;
-}
+
 .encabezado2 {
     margin-left: -35px;
     margin-bottom: 25px;

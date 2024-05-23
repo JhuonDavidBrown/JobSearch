@@ -180,28 +180,23 @@ header a:hover {
     align-items: center; 
     justify-content: center;
     flex-direction: row;
-    background-color: #003851;
+    background-color: #98c0ce;
     border-top-left-radius: 27px;
     border-top-right-radius: 9px;
     border-bottom-right-radius: 9px;
-    color: white;
+    color: black;
     width: 368px;
     height: 152px;
     letter-spacing: 0.02em;
     line-height: 1.4;
     box-shadow: 1px 2px 3px rgba(19, 19, 19, 0.5);
     margin-bottom: 20px;
-    transition: all 0.35s;
-}
-.codeworks:hover{
-    cursor: pointer;
-    transform: scale(1.06);
 }
 
 .ctext{
     align-items: center;
     justify-content: center;
-    background-color: #003851;
+    background-color: #98c0ce;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     margin-left: 15px;
@@ -222,23 +217,28 @@ header a:hover {
     align-items: center; 
     justify-content: center;
     flex-direction: row;
-    background-color: #98c0ce;
+    background-color: #003851;
     border-top-left-radius: 27px;
     border-top-right-radius: 9px;
     border-bottom-right-radius: 9px;
-    color: black;
+    color: white;
     width: 368px;
     height: 150px;
     letter-spacing: 0.02em;
     line-height: 1.4;
     box-shadow: 1px 2px 3px rgba(21, 21, 21, 0.5);
     margin-bottom: 20px;
+    transition: all 0.35s;
+}
+.sunburst_media:hover{
+    cursor: pointer;
+    transform: scale(1.06);
 }
 
 .stext{
     align-items: center;
     justify-content: center;
-    background-color: #98c0ce;
+    background-color: #003851;
     margin-left: 15px;
     padding-right: 10px;
     width: 270px;
@@ -297,7 +297,7 @@ header a:hover {
 .texto{
     font-size: 18px;
     width: 710px;
-    height: 550px;
+    height: 420px;
     box-shadow:4px 8px 4px rgba(132, 135, 137, 0.5);
     background-color: #f3f5f6;
     border: 1.5px solid #b8babc;
