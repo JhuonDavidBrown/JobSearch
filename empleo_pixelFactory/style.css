@@ -803,6 +803,7 @@ cursor: pointer;
 }
 header{
   background-color: #fff;
+  
 }
 .encabezado {
   margin-left: -35px;
@@ -810,7 +811,7 @@ header{
 }
 
 .modal_1 {
-  font-size: 4px;
+  font-size: 9px;
   margin-top: -60px;
 }
 
@@ -835,6 +836,10 @@ header{
   background-color: #bfd1d8;
   border-radius: 9px;
   padding: 10px;
+  border: 1.5px solid #b8babc;
+    border-top-left-radius: 26px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 26px;
 }
 
 .mensaje img {
@@ -889,7 +894,7 @@ header{
 }
 
 .modal_2 {
-  font-size: 4px;
+  font-size: 9px;
   margin-top: -60px;
 }
 

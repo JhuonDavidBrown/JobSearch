@@ -789,10 +789,11 @@ header{
 .mensajes {
     display: flex;
     flex-direction: column;
-    margin-top: 86px;
+    margin-top: -9px;
     margin-left: -50px;
     margin-right: -50px;
     gap: 6px;
+    
 }
 
 .mensaje {
@@ -802,6 +803,10 @@ header{
     background-color: #bfd1d8;
     border-radius: 9px;
     padding: 10px;
+    border: 1.5px solid #b8babc;
+    border-top-left-radius: 26px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 26px;
 }
 
 .mensaje img {
@@ -912,29 +917,3 @@ header{
     pointer-events: auto;
 }
 
-@media (min-width: 768px) {
-    body {
-      font-size: 18px;
-      
-    }
-  }
-  
-  /* Estilos para pantallas de computadoras de escritorio */
-  @media (min-width: 992px) {
-    body {
-      font-size: 20px;
-  
-    }
-  }
-  
-  /* Estilos para pantallas más grandes */
-  @media (min-width: 1200px) {
-    body {
-      font-size: 22px;
-    
-    }
-  }
-  body {
-    font-size: 16px;
-    /* Otros estilos... */
-  }
