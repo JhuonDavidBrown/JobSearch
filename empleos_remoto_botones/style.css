@@ -37,11 +37,14 @@
 .botones{
   display: flex;
   margin: 0 auto;
+  
 }
 .los-filtros{
   display: flex;
 }
-
+.filtro span{
+  text-decoration: none; 
+}
 .filtro{
   margin-top: 0;
   width: 160px;
@@ -53,6 +56,10 @@
   border-radius: 40px;
   background-color: #22646e;
   cursor: pointer;
+  text-decoration: none; 
+}
+.botones a{
+  text-decoration: none;
 }
 
 .filtro .filtros{

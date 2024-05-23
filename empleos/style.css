@@ -32,7 +32,7 @@
 }
 .nav-under{
   margin: 2px auto 20px;
-  width: 100%;
+  width: 1160px;
   height: 50px;
 }
 
@@ -377,8 +377,13 @@
 }
 
 .cerrar{
-  margin-left:92%;
-  margin-right: 16%;
+  position: absolute;
+  right: 280px;
+  
+  /*
+  margin-left:94%;
+  margin-right: 16%;*/
+
   width: 50px;
   height: 50px;
 }

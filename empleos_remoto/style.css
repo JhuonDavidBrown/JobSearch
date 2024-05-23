@@ -38,6 +38,9 @@
   display: flex;
   margin: 0 auto;
 }
+.botones a{
+  text-decoration: none;
+}
 .los-filtros{
   display: flex;
 }
