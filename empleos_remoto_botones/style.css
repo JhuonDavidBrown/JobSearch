@@ -6,7 +6,7 @@
   body {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
+    font-weight: weight;
     background-color: #eff1f2;
   }
 
@@ -132,10 +132,6 @@
   color: #eff1f2;
   margin-left: 5px;
 }
-
-
-
-
   
   .header .logo-jobSearch:hover {
     transform: scale(1.2);
@@ -171,6 +167,7 @@
 
   .nav-right .boton-empleos:hover {
     transform: scale(1.2);
+    background-color: rgb(84, 124, 146) ; 
   }
   .nav-right .icono-mensajes:hover {
     transform: scale(1.2);
@@ -181,6 +178,12 @@
   .nav-right .icono-perfil:hover {
     transform: scale(1.2);
   }
+  .ntf:hover, .msj:hover, .prf:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: rgb(84, 124, 146) ; 
+}
+
   .nav-mid {
     height: 50px;
     width: 600px;

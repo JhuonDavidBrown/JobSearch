@@ -24,7 +24,7 @@ body {
 }
 
 .header .logo-jobSearch:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 .logo-jobSearch {
   width: 143px;
@@ -54,14 +54,24 @@ body {
   border-radius: 20px;
   transition: all 0.3s;
 }
-.nav-right .boton-empleos:hover,
-.icono-mensajes:hover,
-.icono-notificacion:hover,
-.icono-perfil:hover {
+.nav-right .boton-empleos:hover {
   transform: scale(1.1);
-  background-color: #81bcd1;
 }
-
+.nav-right .icono-mensajes:hover {
+  transform: scale(1.1);
+}
+.nav-right .icono-notificacion:hover {
+  transform: scale(1.1);
+}
+.nav-right .icono-perfil:hover {
+  transform: scale(1.1);
+}
+.icono-notificacion:hover,
+.icono-mensajes:hover,
+.icono-perfil:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
 .nav-mid {
   height: 50px;
   width: 600px;
