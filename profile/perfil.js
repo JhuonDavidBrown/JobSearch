@@ -5,11 +5,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const profilePic = document.getElementById('profile-pic');
     const portfolioDisplay = document.getElementById('portfolioDisplay');
 
+
     const uploadFile = (file, path) => {
         return firebase.storage().ref(path).put(file).then(snapshot => {
             return snapshot.ref.getDownloadURL();
         });
     };
+
 
     const checkAuth = () => {
         return new Promise((resolve, reject) => {
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
+
 
     const ensureUserDocument = async (user) => {
         const userDocRef = firebase.firestore().collection('users').doc(user.uid);
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         return userDocRef;
     };
+
 
     fileInput.addEventListener('change', async (event) => {
         const file = event.target.files[0];
@@ -55,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
     profilePicInput.addEventListener('change', async (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -72,13 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
     document.getElementById('open').addEventListener('click', () => {
         fileInput.click();
     });
 
+
     document.getElementById('open2').addEventListener('click', () => {
         profilePicInput.click();
     });
+
 
     const loadUserProfile = async () => {
         try {
@@ -100,9 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+
     const displayPortfolio = (fileName, fileURL) => {
         portfolioDisplay.innerHTML = `<p><a href="${fileURL}" download>${fileName}</a></p>`;
     };
+
 
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
