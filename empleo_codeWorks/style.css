@@ -10,6 +10,9 @@ body{
         font-weight: <weight>;
         background-color: #eff1f2;
 }
+main{
+  margin-top: 29px;
+}
 .header {
     background-color: #eff1f2;
     width: 100%;
@@ -96,24 +99,29 @@ input{
 .diseador-multimedia {
     width: 500px;
     height: 50px;
-    padding-left: 120px;
-    padding-right: 60px;
-    position: relative;
+    margin-right:50%;
+    right: 1px;
+    position: absolute;
+
+    
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-shrink: 0;
+    
     box-sizing: border-box; 
 }
+
 .close{
-    box-sizing: border-box;
-    padding-right: 168.367px;
-    padding-left: 600px;
+  top: 10px;
+  right: 10px;
+  position:absolute;
+  z-index: 1px;
 }
+
 .diseador-multimedia-wrapper {
-    margin: 0 auto;
-    width: 100vh;
+    
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
